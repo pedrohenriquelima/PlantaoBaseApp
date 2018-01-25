@@ -1,0 +1,26 @@
+<!--
+  Generated template for the AddPlantonistaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary0">
+    <ion-title>Adicionar Plantonista</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label floating>Nome</ion-label>
+    <ion-input type="text" [(ngModel)]="plantonista.nomePlantonista"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Matrícula</ion-label>
+    <ion-input type="text" [(ngModel)]="plantonista.idPlantonista"></ion-input>
+  </ion-item>
+ <button ion-button block (click)="addPlantonista(plantonista)">Adicionar</button>
+</ion-content>

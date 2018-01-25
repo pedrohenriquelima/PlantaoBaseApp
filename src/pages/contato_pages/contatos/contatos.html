@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Contatos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      Contatos
+    </ion-list-header>
+    <ion-item *ngFor="let contato of contatos$ | async"
+      detail-push navPush="EditContatoPage"
+      [navParams]="{contato: contato}">
+      {{contato.nomeContato}}
+    </ion-item>
+  </ion-list>
+  <ion-fab bottom right>
+    <button ion-fab (click)="navigateToAddContatoPage()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

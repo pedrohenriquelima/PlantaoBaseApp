@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-title>Plantonistas</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      Plantonistas
+    </ion-list-header>
+    <ion-item *ngFor="let plantonista of plantonistas$ | async"
+      detail-push navPush="EditPlantonistaPage"
+      [navParams]="{plantonista: plantonista}">
+      {{plantonista.nomePlantonista}}
+    </ion-item>
+  </ion-list>
+  <ion-fab bottom right>
+    <button ion-fab (click)="navigateToAddPlantonistaPage()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
